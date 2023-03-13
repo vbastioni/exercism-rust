@@ -7,18 +7,6 @@ fn sort<'a>(s: &'a str) -> (String, Vec<char>) {
     (srt, v)
 }
 
-// pub fn anagrams_for<'a>(oword: &str, open: &'a [&'a str]) -> HashSet<&'a str> {
-//     let (lower, sorted) = sort(oword);
-//     HashSet::from_iter(
-//         open.iter()
-//             .filter(|o| {
-//                 let (op_lower, op_sorted) = sort(w);
-//                 op_lower.len() == lower.len() && op_lower != lower && op_sorted == sorted
-//             })
-//             .into(),
-//     )
-// }
-
 pub fn anagrams_for<'a>(word: &str, open: &'a [&'a str]) -> HashSet<&'a str> {
     let (lower, sorted) = sort(word);
     open.iter()
